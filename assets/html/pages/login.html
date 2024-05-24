@@ -1,0 +1,23 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div>
+	<h1>Login</h1>
+	{% if let Some(url) = redirect_url %}
+	<form hx-post="/login?redirect_url={{ url }}" hx-target="#error" hx-swap="innerHTML">
+	{% else %}
+	<form hx-post="/login" hx-target="#error" hx-swap="innerHTML">
+	{% endif %}
+		<label for="username">Username</label>
+		<input type="text" required name="username" id="username">
+
+		<label for="password">Password</label>
+		<input type="password" required name="password" id="password">
+		<span id="error"></span>
+
+		<button>Login</button>
+	</form>
+</div>
+{% endblock %}

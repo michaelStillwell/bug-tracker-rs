@@ -1,0 +1,33 @@
+layout {
+	tab name="running" {
+		pane size=1 borderless=true {
+			plugin location="zjstatus" 
+		}
+
+		pane split_direction="vertical" {
+			pane size="60%" {
+				pane name="app" size="80%" start_suspended=true focus=true {
+					command "cargo"
+					args "shuttle" "run"
+				}
+
+				pane name="db" start_suspended=true focus=true {
+					command "sqlite3"
+					args "bug-tracker.db"
+				}
+			}
+
+			pane {
+				pane name="check & test" size="80%" {
+					command "cargo"
+					args "watch" "-c" "-w" "src" "-x" "check" "-x" "test" 
+				}
+
+				pane name="tailwind" {
+					command "fish"
+					args "-c" "cd assets && npm run css-watch"
+				}
+			}
+		}
+	}
+}

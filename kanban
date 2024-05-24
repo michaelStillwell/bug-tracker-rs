@@ -1,0 +1,31 @@
+Bug Tracker
+
+	todo
+		remove the session cookie if invalid
+			if the session cookie has a session_id that doesn't exist or something else			
+			that would make it invalid, remove it			
+						
+			probably should put it in the AuthUser
+		crud bug
+			- create bug			
+			- read bug(s)			
+			- update bug			
+			- delete bug
+		implement priority on bugs
+		filter bug table
+			for now just for the different statuses
+		create landing page
+			make a simple landing page for the app
+		add search for bug table
+		create edit bug page
+
+			just make it a seperate page to edit bugs for now
+		add new bugs
+
+			probably just going to go the easy road with this as well
+			seperate page
+		implement status on bugs
+	doing
+		bug: bugs are not being seeded
+			when building and running, the bugs aren't being created
+	done
